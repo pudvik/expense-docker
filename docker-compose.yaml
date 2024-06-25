@@ -7,7 +7,8 @@ volumes:
     external: true
 services:
   mysql:
-    image: mysql:1.0
+    #image: mysql:1.0
+    image: pudviks/mysql:1.0
     container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=ExpenseApp@1 
@@ -18,7 +19,8 @@ services:
       - mysql:/var/lib/mysql
 
   backend:
-    image: backend:1.0
+    #image: backend:1.0
+    image: pudviks/backend:1.0
     container_name: backend
     #command: sh -c "sleep20 && node /app/index.js"
     command: sh -c "sleep 20 && node /app/index.js"
@@ -26,7 +28,8 @@ services:
       - mysql
 
   frontend:
-    image: frontend:1.0
+    #image: frontend:1.0
+    image: pudviks/frontend:1.0
     container_name: frontend
     depends_on:
       - backend
