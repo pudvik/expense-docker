@@ -6,7 +6,7 @@ RUN mkdir /app
 RUN chown expense:expense -R /app
 WORKDIR /app
 COPY package.json .
-COPY *.js .
+COPY *.js /app/
 RUN npm install
 USER expense
 CMD ["node", "index.js"]
